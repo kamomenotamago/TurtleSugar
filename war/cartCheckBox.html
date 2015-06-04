@@ -15,10 +15,7 @@
                 res += '<tr><td>' + json[0].comment +'</td></tr>';
             } else {
                 for (var i = 0;i < json.length;i++){
-                    res += '<td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
-                    res += '<td><a href="' + json[i].url + '">' + json[i].title + '</a></td>' +
-                    '<td><a href="edit.html?id=' + json[i].id + '">Edit</td>' +
-                    '<td><a href="del.html?id=' + json[i].id + '">Delete</td></tr></form>';
+                    res += '<tr><td><a href="' + json[i].url + '">' + json[i].title + '</a></td></tr>';
                 }
             }
             var obj = document.getElementById("datatable");
@@ -33,7 +30,6 @@
         <h1>カートの商品は以下の通りです。</h1>
     <tr>
         <th align="center">注文商品</th>
-        <th align="center">価格</th>
     </tr>
     <tr>
     
@@ -42,11 +38,10 @@
         <td>wait...</td>
       </tr>
     </table>
-        <br>
-        <tr>合計金額　￥${total}</tr>
-        <br>
+    　　<p>
         <a href="thankyou.html">この内容で注文する</a>
         <br>
+        </p>
         <a href="/reset">もう一度選びなおす</a>
     
 </body>
