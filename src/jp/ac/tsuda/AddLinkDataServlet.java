@@ -1,12 +1,14 @@
-package jp.tuyano;
+package jp.ac.tsuda;
  
 import java.io.IOException;
+import java.net.URL;
+import java.util.*;
  
 import javax.jdo.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
  
-public class DelLinkDataServlet extends HttpServlet {
+public class AddLinkDataServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
     @Override
@@ -22,12 +24,18 @@ public class DelLinkDataServlet extends HttpServlet {
             HttpServletResponse resp)
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        long id = Long.parseLong(req.getParameter("id"));
+        String title = req.getParameter("title");
+        String url = req.getParameter("url");
+        String comment = req.getParameter("comment");
+        Date date = Calendar.getInstance().getTime();
+        LinkData data = new LinkData(title,url,comment,date);
         PersistenceManagerFactory factory = PMF.get();
         PersistenceManager manager = factory.getPersistenceManager();
-        LinkData data = (LinkData)manager.getObjectById(LinkData.class,id);
-        manager.deletePersistent(data);
-        manager.close();
+        try {
+            manager.makePersistent(data);
+        } finally {
+            manager.close();
+        }
         resp.sendRedirect("/index.html");
     }
 }

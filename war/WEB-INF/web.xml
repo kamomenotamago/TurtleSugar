@@ -6,7 +6,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <servlet>
         <servlet-name>MyGae</servlet-name>
-        <servlet-class>jp.tuyano.MygaeServlet</servlet-class>
+        <servlet-class>jp.ac.tsuda.MygaeServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MyGae</servlet-name>
@@ -15,7 +15,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   
 <servlet>
     <servlet-name>add_linkdata</servlet-name>
-    <servlet-class>jp.tuyano.AddLinkDataServlet</servlet-class>
+    <servlet-class>jp.ac.tsuda.AddLinkDataServlet</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>add_linkdata</servlet-name>
@@ -24,7 +24,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 <servlet>
     <servlet-name>edit_linkdata</servlet-name>
-    <servlet-class>jp.tuyano.EditLinkDataServlet</servlet-class>
+    <servlet-class>jp.ac.tsuda.EditLinkDataServlet</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>edit_linkdata</servlet-name>
@@ -33,7 +33,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 <servlet>
     <servlet-name>del_linkdata</servlet-name>
-    <servlet-class>jp.tuyano.DelLinkDataServlet</servlet-class>
+    <servlet-class>jp.ac.tsuda.DelLinkDataServlet</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>del_linkdata</servlet-name>
@@ -41,7 +41,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 </servlet-mapping>
 <servlet>
 	<servlet-name>Login</servlet-name>
-	<servlet-class>jp.tuyano.LoginServlet</servlet-class>
+	<servlet-class>jp.ac.tsuda.LoginServlet</servlet-class>
 </servlet>
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>
@@ -49,7 +49,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 </servlet-mapping>
 <servlet>
 	<servlet-name>Cart</servlet-name>
-	<servlet-class>jp.tuyano.CartServlet</servlet-class>
+	<servlet-class>jp.ac.tsuda.CartServlet</servlet-class>
 </servlet>
 	<servlet-mapping>
 		<servlet-name>Cart</servlet-name>
@@ -57,7 +57,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 </servlet-mapping>
 <servlet>
 	<servlet-name>Reset</servlet-name>
-	<servlet-class>jp.tuyano.ResetServlet</servlet-class>
+	<servlet-class>jp.ac.tsuda.ResetServlet</servlet-class>
 </servlet>
 	<servlet-mapping>
 		<servlet-name>Reset</servlet-name>
@@ -65,7 +65,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 <servlet>
     <servlet-name>Logout</servlet-name>
-	<servlet-class>jp.tuyano.LogoutServlet</servlet-class>
+	<servlet-class>jp.ac.tsuda.LogoutServlet</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>Logout</servlet-name>
@@ -73,7 +73,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 <servlet>
 	<servlet-name>Place</servlet-name>
-	<servlet-class>jp.tuyano.PlaceServlet</servlet-class>
+	<servlet-class>jp.ac.tsuda.PlaceServlet</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>Place</servlet-name>

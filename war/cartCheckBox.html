@@ -5,17 +5,12 @@
     <title>SugarPopへようこそ</title>
     <script type="text/javascript" src="lib.js"></script>
         <script type="text/javascript">
-        function callback(request){
+            function callback(request){
             var json = eval(request.responseText);
             var res = '';
-            if (json.length == 1){
-                res += '<tr><td>' + json[0].id +'</td></tr>';
-                res += '<tr><td>' + json[0].title +'</td></tr>';
-                res += '<tr><td>' + json[0].url +'</td></tr>';
-                res += '<tr><td>' + json[0].comment +'</td></tr>';
-            } else {
                 for (var i = 0;i < json.length;i++){
                     res += '<tr><td><a href="' + json[i].url + '">' + json[i].title + '</a></td></tr>';
+                    }
                 }
             }
             var obj = document.getElementById("datatable");

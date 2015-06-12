@@ -8,62 +8,39 @@
         function callback(request){
             var json = eval(request.responseText);
             var res = '';
-            if (json.length == 1){
-                res += '<tr><td>' + json[0].id +'</td></tr>';
-                res += '<tr><td>' + json[0].title +'</td></tr>';
-                res += '<tr><td>' + json[0].url +'</td></tr>';
-                res += '<tr><td>' + json[0].comment +'</td></tr>';
-            } else {
-                for (var i = 0;i < json.length;i++){
-                	res += '<form id="frmMain"><tr><td><input type="checkbox" value=json[i].id name="shohinid" /></td>';
-                    res += '<td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
-                    res += '<td><a href="' + json[i].url + '">' + json[i].title + '</a></td>' +
-                    '<td><a href="edit.html?id=' + json[i].id + '">Edit</td>' +
-                    '<td><a href="del.html?id=' + json[i].id + '">Delete</td></tr></form>';
+            var n = document.forms.form1.id_form1.value;
+            alert(n);
+               for (var i = 0;i < json.length;i++){
+                	if(i==n){
+                    res = '<a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a>';
+                    res = '<a href="' + json[i].url + '">' + json[i].title + '</a>';
+                }else{
+                	
                 }
             }
             var obj = document.getElementById("datatable");
             obj.innerHTML = res;
         }
-        
-        function setValue(){
-        	var ckboxList = document.getElementById("frmMain").getElementsByTagName("input");
-        	var value = new String();
-        	for(var i=0;i<ckboxList.length;i++){
-        	value += ckboxList[i].checked;
-        	if(i<ckboxList.length-1){
-        	value += "&";
-        	}
-        	}
-        	location.href = "cartCheckBox.html?"+value;
-        	return;
-        }
         </script>
   </head>
-  <body onload="getData(null);">
+  <body onload="getData(null)>
       <div align="center">
       <h1>Suger Pop - 商品一覧</h1>
       <h2>${user}さん、お好きなケーキを選んでください</h2>
-
-          
-     <!--  <table class="menu">
-         <c:forEach items="${data}" var="rec">
-              <tr>
-                  <td><input type="checkbox" value=${rec.id} name="shohinid" /></td>
-                  <td>${rec.id}</td>
-                  <td>${rec.name}</td>
-                  <td class="price">${rec.price} 円</td>
-              </tr>
-         </c:forEach>
-            </table> -->
+     <fieldset><legend>カートの中身</legend>
      <table id="datatable" border="1">
       <tr>
         <td>wait...</td>
       </tr>
     </table>
+    </fieldset>
+    <form action="index.html" method="get" id="form1">
+    <input type="text" name="textfield" id="id_form1">
+    <input type ="submit" value ="送信" onClick="getData(null)">
+</form>
      <form action="/cart" method="get" class="cart">
     <br>
-    <input type="submit" name="/cart" value="カートの内容を確認して注文へ進む" onclick="setValue();">
+    <input type="submit" name="/cart" value="カートの内容を確認して注文へ進む">
     </form>
     <form action="/logout" method="post">
         <input type="submit" name="logout" value="ログアウト" />

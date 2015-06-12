@@ -25,19 +25,6 @@
             var obj = document.getElementById("datatable");
             obj.innerHTML = res;
         }
-        
-        function setValue(){
-        	var ckboxList = document.getElementById("frmMain").getElementsByTagName("input");
-        	var value = new String();
-        	for(var i=0;i<ckboxList.length;i++){
-        	value += ckboxList[i].checked;
-        	if(i<ckboxList.length-1){
-        	value += "&";
-        	}
-        	}
-        	location.href = "cartCheckBox.html?"+value;
-        	return;
-        }
         </script>
     </head>
     <body>
@@ -51,7 +38,7 @@
       </tr>
     </table>
           <input type="submit" name="/cart" value="カートの内容を確認して注文へ進む" />
-      </form>
+      </form>　
 
 
 

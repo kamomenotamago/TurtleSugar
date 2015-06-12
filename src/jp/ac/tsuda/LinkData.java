@@ -1,4 +1,4 @@
-package jp.tuyano;
+package jp.ac.tsuda;
  
 import java.net.URL;
 import java.util.Date;
