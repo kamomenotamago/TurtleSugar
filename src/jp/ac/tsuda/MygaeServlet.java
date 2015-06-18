@@ -19,6 +19,7 @@ public class MygaeServlet extends HttpServlet {
         String param1 = req.getParameter("id");
         PrintWriter out = resp.getWriter();
         List<LinkData> list = null;
+        
         if (param1 == null || param1 ==""){
             String query = "select from " + LinkData.class.getName();
             try {

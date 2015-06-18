@@ -1,11 +1,15 @@
 package jp.ac.tsuda;
 
 import java.io.*;
-import java.net.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class PlaceServlet extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 	          throws ServletException, IOException {
 	    res.setContentType("text/html; charset=UTF-8");
@@ -16,19 +20,19 @@ public class PlaceServlet extends HttpServlet {
 	    out.println("<HEAD>");
 	    out.println("<TITLE>配送場所・配送日時</TITLE>");
 	    out.println("</HEAD>");
-	    out.println("<BODY>");
-	    out.println("<H1>SignUp Dagta</H1>");
+	    out.println("<BODY bgcolor="+"#fff8dc"+">");
+	    out.println("<H1><Center><font color="+"#00BFFF"+">SignUp Dagta</font></Center></H1>");
 	    out.println("<BR><HR><BR>");
 	    out.println("<UL>");
 	    out.println("<tr>");
-	    out.println("<th>"+"<h1>配送場所</h1>"+req.getParameter("place"));
-	    out.println("<th>" + "<h1>配送日時</h1>"+ req.getParameter("date"));
-	    out.println("</tr></div>");
+	    out.println("<center>配送場所</center>"+"<center>"+req.getParameter("place")+"</center>");
+	    out.println("<Center>配送日時</Center>"+ "<center>"+req.getParameter("date")+"</center>");
+	    out.println("</div>");
 	    out.println("</table>");
-	    out.println("<a href=thankyou.html>この内容で注文する</a>");
+	    out.println("<center><a href=thankyou.html>この内容で注文する</a> "+" <a href=place_date.html>この内容を変更する</a></center>");
+	    out.println("<div><Center>Copyright &copy; 2015 Suger Pop All Rights Reserved.</Center></div>");
 	    out.println("</BODY>");
 	    out.println("</HTML>");
 	    out.close();
 	}
-
 }
